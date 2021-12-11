@@ -1,0 +1,17 @@
+#Spacy import code
+pip install spacy
+
+#en_core_web_sm
+python -m spacy download 
+
+
+#imports
+import spacy
+from spacy import displacy
+NER = spacy.load("en_core_web_sm")
+
+#passing details through NER
+parsed_details = NER(' '.join(details))
+
+for NamedEntity in parsed_details.ents:
+    show_ents(NamedEntity)
